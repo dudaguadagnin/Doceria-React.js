@@ -20,7 +20,12 @@ class Formulario extends Component {
             [name] : value
         });
     }
-
+    submitFormulario = () =>{
+        //manda o state que contem as informaçoes que o usuario digitou
+        //para o app.js
+        this.props.escutadorDeSubmit(this.state);
+        this.setState(this.stateInicial);
+    }
 
 
 
@@ -60,7 +65,8 @@ class Formulario extends Component {
                 />
 
 
-                <button type="button">Salvar
+                <button onClick={this.submitFormulario}
+                type="button">Salvar
                 </button>
             </form>
 
