@@ -2,25 +2,25 @@ import React, { Component } from 'react'
 
 class Formulario extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.stateInicial ={
-            nome:'',
-            sobrenome:'',
-            idade:'',
+        this.stateInicial = {
+            nome: '',
+            sobrenome: '',
+            idade: '',
         }
         this.state = this.stateInicial;
     }
 
     escutadorDeInput = event => {
-        const { name, value} = event.target;
+        const { name, value } = event.target;
 
         //a cada digitação o campo é atualizado
         this.setState({
-            [name] : value
+            [name]: value
         });
     }
-    submitFormulario = () =>{
+    submitFormulario = () => {
         //manda o state que contem as informaçoes que o usuario digitou
         //para o app.js
         this.props.escutadorDeSubmit(this.state);
@@ -31,48 +31,48 @@ class Formulario extends Component {
 
     render() {
 
-        const{ nome, sobrenome, idade } = this.state;
+        const { nome, sobrenome, idade } = this.state;
 
         return (
             <form>
-
-                <label htmlFor="nome">Nome</label>
-                <input
-                    id="nome"
-                    type="text"
-                    name="nome"
-                    value={nome}
-                    onChange={this.escutadorDeInput}
-                />
-
-                <label htmlFor="sobrenome">Sobrenome</label>
-                <input
-                    id="sobrenome"
-                    type="text"
-                    name="sobrenome"
-                    value={sobrenome}
-                    onChange={this.escutadorDeInput}
-                />
-
-
-                <label htmlFor="idade">Idade</label>
-                <input
-                    id="idade"
-                    type="text"
-                    name="idade"
-                    value={idade}
-                    onChange={this.escutadorDeInput}
-                />
-
-
-                <button onClick={this.submitFormulario}
-                type="button">Salvar
-                </button>
+                <div className="row">
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="nome">Nome</label>
+                        <input
+                            className="validate"
+                            id="nome"
+                            type="text"
+                            name="nome"
+                            value={nome}
+                            onChange={this.escutadorDeInput}
+                        />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="sobrenome">sobrenome</label>
+                        <input
+                            className="validate"
+                            id="sobrenome"
+                            type="text"
+                            name="sobrenome"
+                            value={sobrenome}
+                            onChange={this.escutadorDeInput}
+                        />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="idade">Idade</label>
+                        <input
+                            className="validate"
+                            id="idade"
+                            type="text"
+                            name="idade"
+                            value={idade}
+                            onChange={this.escutadorDeInput}
+                        />
+                    </div>
+                </div>
+                <button className="waves-effect waves-light btn light-green darken-3" onClick={this.submitFormulario} type="button">Salvar</button>
             </form>
-
-        )
-
+        );
     }
 }
-
 export default Formulario;

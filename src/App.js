@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import React,{ Component, Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import Tabela from './Tabela';
 import Header from './Header';
@@ -50,8 +50,11 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Tabela pessoas={this.state.pessoas} removePessoa={this.removePessoa} />
+        <div className="container">
+          <Tabela pessoas={this.state.pessoas} removePessoa={this.removePessoa} />
         <Forms escutadorDeSubmit={this.escutadorDeSubmit}/>
+        </div>
+        
       </Fragment>
     ); // envia o array para a tabela
   }

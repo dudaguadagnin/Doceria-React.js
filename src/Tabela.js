@@ -43,7 +43,7 @@ class Tabela extends Component {
         const { pessoas, removePessoa} = this.props;
 
         return (
-            <table className="highlight">
+            <table className="centered highlight">
                 <TableHead />
                 <TableBody pessoas={pessoas} removePessoa={removePessoa}/>
 
