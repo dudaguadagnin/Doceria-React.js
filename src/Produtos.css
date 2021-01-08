@@ -1,0 +1,81 @@
+.imagem{
+    background: url('./img/doces.jpg') no-repeat center / cover;
+    height: calc(100vh - 72px);
+    width: 100%;
+}
+nav .brand-logo.right {
+
+    margin-right: 10px;
+}
+.titulo-principal{
+    color: #fdfdfd;
+    position: absolute;
+    left: 50%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    top: 45%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.principal{
+    background: rosybrown;
+    position:static;
+    padding: 0.5rem;
+    text-align: center;
+}
+.texto-produtos{
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 18px;
+}
+.doces{
+    background-color: rgb(210, 228, 192);
+    display:grid;
+    grid-gap: .1rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50% ;  
+}
+
+.doce{
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 5rem);
+    align-items:center;
+    margin:auto;
+}
+.doce-imagem{
+
+    margin: 2rem;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow:5px 4px 10px rgb(95, 88, 88);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 350px;
+}
+.primeira-imagem{
+    background-image: url('./img/bolos.jpg');
+}
+.segunda-imagem{
+    background-image: url('./img/docinho.jpg');
+}
+.terceira-imagem{
+    background-image: url('./img/bombons.jpeg');
+}
+.quarta-imagem{
+    background-image: url('./img/salgados.jpg');
+}
+.botao{
+    background: rosybrown;
+    font-size: 1.25rem;
+    margin: 21rem 0;
+    margin-left: 8rem;
+    position: static;
+}
+
+/**background: url('./img/bolos.jpg');
+    height: 29rem;
+    width: 30rem;**/
+

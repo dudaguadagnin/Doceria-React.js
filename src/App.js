@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import 'materialize-css/dist/css/materialize.min.css';
+import Tabela from './Tabela';
+import Header from './Header';
+import router from 'react-router-dom';
 
+//array de pessoas
 function App() {
+  const pessoas = [
+    {
+      nome: 'Carol',
+      sobrenome: 'Ferreira',
+      idade: '30'
+    },
+    {
+      nome: 'Juliana',
+      sobrenome: 'de Prado',
+      idade: '16'
+    },
+    {
+      nome: 'Ana',
+      sobrenome: 'Paula',
+      idade: '12'
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+     <Tabela pessoas = {pessoas}/> 
     </div>
-  );
+  ); // envia o array para a tabela
 }
 
 export default App;
