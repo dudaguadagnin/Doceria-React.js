@@ -7,15 +7,32 @@ class Formulario extends Component {
     constructor(props) {
         super(props);
 
-        this.validador = new FormularioValidador({
+        this.validador = new FormularioValidador([{
             campo: 'nome',
             metodo: 'isEmpty', //metodo do validator
-        });
+            validoQuando: false,
+            mensagem: 'entre com nome'
+        },
+        {
+            campo: 'sobrenome',
+            metodo: 'isEmpty', //metodo do validator
+            validoQuando: false,
+            mensagem: 'entre com sobrenome'
+        },
+        {
+            campo: 'idade',
+            metodo: 'isInt', //metodo do validator
+            args: [{min: 0, max:200}],
+            validoQuando: true,
+            mensagem: 'entre com idade'
+        }
+        ]);
 
         this.stateInicial = {
             nome: '',
             sobrenome: '',
             idade: '',
+            validacao: this.validador.valido()
         }
         this.state = this.stateInicial;
     }
@@ -29,11 +46,24 @@ class Formulario extends Component {
         });
     }
     submitFormulario = () => {
-        if (this.validador.valida(this.state)) {
+
+        const validacao = this.validador.valida(this.state);
+
+
+
+        if(validacao.isValid) {
             //manda o state que contem as informaçoes que o usuario digitou
             //para o app.js
             this.props.escutadorDeSubmit(this.state);
             this.setState(this.stateInicial);
+        }else{
+            const{nome, sobrenome, idade} = validacao;
+            const campos = [nome, sobrenome, idade];
+
+            const camposInvalidos = campos.filter(elem => {
+                return elem.isInvalid;
+            });
+            camposInvalidos.forEach(console.log);
         }
 
     }
