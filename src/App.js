@@ -5,6 +5,7 @@ import Header from './Header';
 import router from 'react-router-dom';
 import Forms from './Formulario';
 import ApiService from './ApiService';
+import './App.css';
 
 class App extends Component {
 
@@ -52,13 +53,20 @@ class App extends Component {
     this.setState({ pessoas: [...this.state.pessoas, pessoa] })
   }
 
-  
+  componentDidMount(){
+    //recuperando os elementos da api, redesenhando na tela
+      ApiService.ListaPessoas()
+        .then(res => {
+            this.setState({pessoas: [...this.state.pessoas, ...res.data]})
+        });
+    
+  }
 
   render() {
     return (
       <Fragment>
         <Header />
-        <div className="container">
+        <div className="container rodape">
           <h1>Clientes</h1>
           <Tabela pessoas={this.state.pessoas} removePessoa={this.removePessoa} />
           <Forms escutadorDeSubmit={this.escutadorDeSubmit} />
