@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import Tabela from './Tabela';
 import Header from './Header';
-import router from 'react-router-dom';
 import Forms from './Formulario';
 import ApiService from './ApiService';
 import './App.css';
+import PopUp from './PopUp'
 
 class App extends Component {
 
@@ -47,10 +47,12 @@ class App extends Component {
         }),
       }
     );
+    PopUp.exibeMensagem("error", "Removido com sucesso!")
   }
 
   escutadorDeSubmit = pessoa => {
-    this.setState({ pessoas: [...this.state.pessoas, pessoa] })
+    this.setState({ pessoas: [...this.state.pessoas, pessoa] });
+    PopUp.exibeMensagem("success", "Adicionado com sucesso!");
   }
 
   componentDidMount(){

@@ -24,8 +24,8 @@ const TableBody = props => {
                 <td>{linha.sobrenome}</td>
                 <td>{linha.idade}</td>
                 <td><button onClick ={ () => {props.removePessoa(index) }}
-                 className="btn-floating btn-large waves-effect waves-light light-green lighten-1">
-                    Remover</button></td>
+                 className="btn-floating waves-effect waves-light light-green lighten-1">
+                    x</button></td>
                 
             </tr>
         );

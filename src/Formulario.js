@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FormularioValidador from './FormularioValidador'
-
+import PopUp from './PopUp'
 
 class Formulario extends Component {
 
@@ -49,8 +49,6 @@ class Formulario extends Component {
 
         const validacao = this.validador.valida(this.state);
 
-
-
         if(validacao.isValid) {
             //manda o state que contem as informaçoes que o usuario digitou
             //para o app.js
@@ -63,7 +61,9 @@ class Formulario extends Component {
             const camposInvalidos = campos.filter(elem => {
                 return elem.isInvalid;
             });
-            camposInvalidos.forEach(console.log);
+            camposInvalidos.forEach(campo =>{
+                PopUp.exibeMensagem('error', campo.message);
+            });
         }
 
     }
