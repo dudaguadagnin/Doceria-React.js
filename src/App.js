@@ -11,7 +11,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    
 
     this.state = {
       pessoas: [],
@@ -35,33 +34,47 @@ class App extends Component {
   }*/
 
 
-  removePessoa = index => {
+  removePessoa = id => {
 
     const { pessoas } = this.state;
 
-    //alteração de State
-    this.setState(
-      {
-        pessoas: pessoas.filter((pessoa, posAtual) => {
-          return posAtual !== index;
-        }),
-      }
-    );
-    PopUp.exibeMensagem("error", "Removido com sucesso!")
+    const pessoasAtualizado = pessoas.filter(pessoa => {
+      return pessoa.id !== id;
+    });
+
+    ApiService.RemovePessoa(id)
+      .then(res => ApiService.TrataErros(res))
+      .then(res => {
+        if (res.message === 'deleted') {
+          this.setState({ pessoas: [...pessoasAtualizado] });
+          PopUp.exibeMensagem('error', "Pessoa removida com sucesso");
+        }
+      })
+      .catch(err => PopUp.exibeMensagem('error', "Erro na comunicação com a API ao tentar remover a pessoa"))
   }
 
   escutadorDeSubmit = pessoa => {
-    this.setState({ pessoas: [...this.state.pessoas, pessoa] });
-    PopUp.exibeMensagem("success", "Adicionado com sucesso!");
+    ApiService.CriaPessoa(JSON.stringify(pessoa)) //recebe em string
+      .then(res => ApiService.TrataErros(res))
+      .then(res => {
+        if (res.message === 'success') {
+        this.setState({ pessoas: [...this.state.pessoas, res.data] });
+        PopUp.exibeMensagem('success', "adicionado com sucesso");
+      }
+      })
+      .catch(err => PopUp.exibeMensagem('error', "Erro na comunicação com a API ao tentar adicionar a pessoa"));
   }
 
-  componentDidMount(){
+  componentDidMount() {
     //recuperando os elementos da api, redesenhando na tela
-      ApiService.ListaPessoas()
-        .then(res => {
-            this.setState({pessoas: [...this.state.pessoas, ...res.data]})
-        });
-    
+    ApiService.ListaPessoas()
+      .then(res => ApiService.TrataErros(res))
+      .then(res => {
+        if (res.message === 'success') {
+          this.setState({ pessoas: [...this.state.pessoas, ...res.data] })
+        }
+      })
+      .catch(err => PopUp.exibeMensagem('error', "Erro na comunicação com a API ao tentar listar os autores"));
   }
 
   render() {

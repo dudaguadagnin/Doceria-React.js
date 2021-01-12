@@ -16,14 +16,14 @@ const TableHead = () => {
 
 const TableBody = props => {
 
-    const linhas = props.pessoas.map((linha, index) => {
+    const linhas = props.pessoas.map((linha) => {
         return (
 
-            <tr>
+            <tr key={linha.id}>
                 <td>{linha.nome}</td>
                 <td>{linha.sobrenome}</td>
                 <td>{linha.idade}</td>
-                <td><button onClick ={ () => {props.removePessoa(index) }}
+                <td><button onClick ={ () => {props.removePessoa(linha.id) }}
                  className="btn-floating waves-effect waves-light light-green lighten-1">
                     x</button></td>
                 
