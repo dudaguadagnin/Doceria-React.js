@@ -34,6 +34,7 @@ nav .brand-logo.right {
     grid-gap: .1rem;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50% ;  
+    
 }
 
 .doce{
@@ -42,6 +43,7 @@ nav .brand-logo.right {
     width: calc(25% - 5rem);
     align-items:center;
     margin:auto;
+    margin-bottom: 1em;
 }
 .doce-imagem{
 
