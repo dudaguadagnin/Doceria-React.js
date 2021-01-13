@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Header from './Header';
-import './Sobre.css'
+import './Sobre.css';
+import Rodape from './Rodape';
 
 
 const Sobre = () => {
@@ -29,14 +30,9 @@ const Sobre = () => {
                         <li><i class="tiny material-icons">group</i> Profissionais qualificados</li>
                         <li><i class="tiny material-icons">restaurant_menu</i> Produtos deliciosos e de qualidade!</li>
                     </ul>
-                </div>
-                <div className="rodape">
-                    <i class="icone medium material-icons">local_cafe</i>
-
-                    <h4 className="nome-rodape">Doceria Pão Doce</h4>
-                    <p className="descricao">Deixando a vida mais doce</p>
-                </div>
+                </div>  
             </section>
+            <Rodape />
         </Fragment>
     );
 }

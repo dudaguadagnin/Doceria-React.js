@@ -1,0 +1,25 @@
+.rodape{
+    background-color:rgb(148, 204, 84);
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+.descricao{
+    font-size: 15px;
+    color:darkgreen;
+    text-align: end;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.nome-rodape{
+
+    font-size: 30px;
+    color:darkgreen;
+    display: flex;
+    margin: auto;
+
+}
+.icone{
+
+    color:darkgreen
+}
