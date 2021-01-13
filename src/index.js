@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Paginas/App/App';
 import reportWebVitals from './reportWebVitals';
-import Sobre from './Sobre';
-import Produtos from './Produtos';
-import NotFound from './NotFound';
+import Sobre from './Paginas/Sobre/Sobre';
+import Produtos from './Paginas/Produtos/Produtos';
+import NotFound from './Paginas/NotFound/NotFound';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 

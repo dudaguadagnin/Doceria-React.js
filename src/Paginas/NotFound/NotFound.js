@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Header from './Header';
+import Header from '../../Componentes/Header';
 
 const NotFound = () => {
 

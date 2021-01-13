@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
-import Tabela from './Tabela';
-import Header from './Header';
-import Forms from './Formulario';
-import ApiService from './ApiService';
+import Tabela from '../../Componentes/Tabela';
+import Header from '../../Componentes/Header';
+import Forms from '../../Componentes/Formulario';
+import ApiService from '../../utils/ApiService';
 import './App.css';
-import PopUp from './PopUp';
-import Rodape from './Rodape';
+import PopUp from '../../utils/PopUp';
+import Rodape from '../../Componentes/Rodape';
 
 class App extends Component {
 

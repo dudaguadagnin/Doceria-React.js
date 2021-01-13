@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import Header from './Header';
+import Header from '../../Componentes/Header';
 import './Sobre.css';
-import Rodape from './Rodape';
+import Rodape from '../../Componentes/Rodape';
 
 const Sobre = () => {
 

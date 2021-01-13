@@ -1,5 +1,5 @@
 .imagem{
-    background: url('./img/doces.jpg') no-repeat center / cover;
+    background: url('../../img/doces.jpg') no-repeat center / cover;
     height: calc(100vh - 72px);
     width: 100%;
 }
@@ -55,19 +55,19 @@ nav .brand-logo.right {
 }
 
 .primeira-imagem{
-    background-image: url('./img/bolos.jpg');
+    background-image: url('../../img/bolos.jpg');
 }
 
 .segunda-imagem{
-    background-image: url('./img/docinho.jpg');
+    background-image: url('../../img/docinho.jpg');
 }
 
 .terceira-imagem{
-    background-image: url('./img/bombons.jpeg');
+    background-image: url('../../img/bombons.jpeg');
 }
 
 .quarta-imagem{
-    background-image: url('./img/salgados.jpg');
+    background-image: url('../../img/salgados.jpg');
 }
 
 .botao{
