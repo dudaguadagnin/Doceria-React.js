@@ -1,7 +1,8 @@
 
 import React, { Fragment } from 'react';
 import Header from './Header';
-import './Produtos.css'
+import './Produtos.css';
+import Rodape from './Rodape';
 
 const Produtos = () => {
 
@@ -49,6 +50,7 @@ const Produtos = () => {
 
 
 			</body>
+			<Rodape />
 		</Fragment>
 	);
 }

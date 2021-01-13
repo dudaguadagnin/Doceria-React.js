@@ -5,7 +5,8 @@ import Header from './Header';
 import Forms from './Formulario';
 import ApiService from './ApiService';
 import './App.css';
-import PopUp from './PopUp'
+import PopUp from './PopUp';
+import Rodape from './Rodape';
 
 class App extends Component {
 
@@ -86,7 +87,7 @@ class App extends Component {
           <Tabela pessoas={this.state.pessoas} removePessoa={this.removePessoa} />
           <Forms escutadorDeSubmit={this.escutadorDeSubmit} />
         </div>
-
+      <Rodape />
       </Fragment>
     ); // envia o array para a tabela
   }
