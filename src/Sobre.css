@@ -1,6 +1,5 @@
 .sobre{
     margin:0%;
-
     background-color: rgb(217, 230, 204);
 }
 .conteudo-sobre{
@@ -9,7 +8,6 @@
     grid-template-rows: 30% 30% 40%;  
     align-items:center;
 }
-
 .texto{
     display:block;
     font-size: 1.5em;
@@ -68,7 +66,6 @@
     padding-top: 3rem;
     text-align: center;
     padding-bottom: 2rem;
-
 }
 .pp{
     font-size: 4rem;

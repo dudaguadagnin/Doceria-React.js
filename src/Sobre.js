@@ -3,14 +3,15 @@ import Header from './Header';
 import './Sobre.css';
 import Rodape from './Rodape';
 
-
 const Sobre = () => {
 
     return (
         <Fragment>
             <Header />
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+            
             <section className="sobre">
+
                 <div className="conteudo-sobre">
                     <p className="texto">Localizada no coração da cidade traz para o mercado o que
                     há de melhor de confeitaria.</p>
@@ -30,7 +31,8 @@ const Sobre = () => {
                         <li><i class="tiny material-icons">group</i> Profissionais qualificados</li>
                         <li><i class="tiny material-icons">restaurant_menu</i> Produtos deliciosos e de qualidade!</li>
                     </ul>
-                </div>  
+                </div>
+                
             </section>
             <Rodape />
         </Fragment>

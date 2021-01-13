@@ -4,7 +4,6 @@
     width: 100%;
 }
 nav .brand-logo.right {
-
     margin-right: 10px;
 }
 .titulo-principal{
@@ -34,9 +33,7 @@ nav .brand-logo.right {
     grid-gap: .1rem;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50% ;  
-    
 }
-
 .doce{
     display: flex;
     flex-direction: column;
@@ -46,7 +43,6 @@ nav .brand-logo.right {
     margin-bottom: 1em;
 }
 .doce-imagem{
-
     margin: 2rem;
     text-align: center;
     border-radius: 100%;
@@ -57,18 +53,23 @@ nav .brand-logo.right {
     height: 350px;
     width: 350px;
 }
+
 .primeira-imagem{
     background-image: url('./img/bolos.jpg');
 }
+
 .segunda-imagem{
     background-image: url('./img/docinho.jpg');
 }
+
 .terceira-imagem{
     background-image: url('./img/bombons.jpeg');
 }
+
 .quarta-imagem{
     background-image: url('./img/salgados.jpg');
 }
+
 .botao{
     background: rosybrown;
     font-size: 1.25rem;

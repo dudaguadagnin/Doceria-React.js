@@ -16,7 +16,7 @@ class FormValidator {
             const metodoValidacao = typeof regra.metodo === 'string' ?
                 validador[regra.metodo] : regra.metodo
 
-            if(metodoValidacao(campoValor, ...args, state) !== regra.validoQuando) {
+            if (metodoValidacao(campoValor, ...args, state) !== regra.validoQuando) {
                 validacao[regra.campo] = {
                     isInvalid: true,
                     message: regra.mensagem

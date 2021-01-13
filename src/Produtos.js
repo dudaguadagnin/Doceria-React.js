@@ -9,14 +9,10 @@ const Produtos = () => {
 	return (
 		<Fragment>
 			<Header />
-
-
 			<body>
 				<header>
-
 					<h1 class="titulo-principal">Doceria Pão Doce</h1>
 					<div class="imagem" src="./img/doces.jpg"></div>
-
 				</header>
 				<div class="principal">
 					<h2 class="titulo-centralizado">Nossos deliciosos doces</h2>
@@ -46,13 +42,9 @@ const Produtos = () => {
 						</div>
 					</div>
 				</section>
-
-
-
 			</body>
 			<Rodape />
 		</Fragment>
 	);
 }
-
 export default Produtos;

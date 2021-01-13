@@ -22,7 +22,7 @@ class Formulario extends Component {
         {
             campo: 'idade',
             metodo: 'isInt', //metodo do validator
-            args: [{min: 0, max:200}],
+            args: [{ min: 0, max: 200 }],
             validoQuando: true,
             mensagem: 'entre com idade'
         }
@@ -49,27 +49,23 @@ class Formulario extends Component {
 
         const validacao = this.validador.valida(this.state);
 
-        if(validacao.isValid) {
+        if (validacao.isValid) {
             //manda o state que contem as informaçoes que o usuario digitou
             //para o app.js
             this.props.escutadorDeSubmit(this.state);
             this.setState(this.stateInicial);
-        }else{
-            const{nome, sobrenome, idade} = validacao;
+        } else {
+            const { nome, sobrenome, idade } = validacao;
             const campos = [nome, sobrenome, idade];
 
             const camposInvalidos = campos.filter(elem => {
                 return elem.isInvalid;
             });
-            camposInvalidos.forEach(campo =>{
+            camposInvalidos.forEach(campo => {
                 PopUp.exibeMensagem('error', campo.message);
             });
         }
-
     }
-
-
-
     render() {
 
         const { nome, sobrenome, idade } = this.state;

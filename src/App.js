@@ -34,7 +34,6 @@ class App extends Component {
     idade: '12'
   }*/
 
-
   removePessoa = id => {
 
     const { pessoas } = this.state;
@@ -59,9 +58,9 @@ class App extends Component {
       .then(res => ApiService.TrataErros(res))
       .then(res => {
         if (res.message === 'success') {
-        this.setState({ pessoas: [...this.state.pessoas, res.data] });
-        PopUp.exibeMensagem('success', "adicionado com sucesso");
-      }
+          this.setState({ pessoas: [...this.state.pessoas, res.data] });
+          PopUp.exibeMensagem('success', "adicionado com sucesso");
+        }
       })
       .catch(err => PopUp.exibeMensagem('error', "Erro na comunicação com a API ao tentar adicionar a pessoa"));
   }
@@ -87,13 +86,9 @@ class App extends Component {
           <Tabela pessoas={this.state.pessoas} removePessoa={this.removePessoa} />
           <Forms escutadorDeSubmit={this.escutadorDeSubmit} />
         </div>
-      <Rodape />
+        <Rodape />
       </Fragment>
     ); // envia o array para a tabela
   }
-
-
-
-
 }
 export default App;

@@ -1,32 +1,26 @@
 const ApiService = {
-    ListaPessoas: () =>{
-        return fetch('http://localhost:8000/api/pessoa')
-        ;
+    ListaPessoas: () => {
+        return fetch('http://localhost:8000/api/pessoa');
     },
 
-    CriaPessoa: pessoa =>{
-        return fetch('http://localhost:8000/api/pessoa', {method: 'POST', headers: {'content-type': 'application/json'}, body: pessoa})
-        ;
+    CriaPessoa: pessoa => {
+        return fetch('http://localhost:8000/api/pessoa', { method: 'POST', headers: { 'content-type': 'application/json' }, body: pessoa });
     },
 
-    ListaNomes: () =>{
-        return fetch('http://localhost:8000/api/pessoa/nome')
-        ;
+    ListaNomes: () => {
+        return fetch('http://localhost:8000/api/pessoa/nome');
     },
-    ListaSobrenomes: () =>{
-        return fetch('http://localhost:8000/api/pessoa/sobrenome')
-        ;
+    ListaSobrenomes: () => {
+        return fetch('http://localhost:8000/api/pessoa/sobrenome');
     },
-    RemovePessoa: id =>{
-        return fetch(`http://localhost:8000/api/pessoa/${id}`, {method: 'DELETE', Headers: {'content-type': 'application/json'}})
-        ;
+    RemovePessoa: id => {
+        return fetch(`http://localhost:8000/api/pessoa/${id}`, { method: 'DELETE', Headers: { 'content-type': 'application/json' } });
     },
-    TrataErros: res =>{
-        if(!res.ok){
+    TrataErros: res => {
+        if (!res.ok) {
             throw Error(res.responseText);
         }
         return res.json();
     }
-
 }
 export default ApiService;

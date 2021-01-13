@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const TableHead = () => {
     return (
         <thead>
@@ -26,7 +25,6 @@ const TableBody = props => {
                 <td><button onClick ={ () => {props.removePessoa(linha.id) }}
                  className="btn-floating waves-effect waves-light light-green lighten-1">
                     x</button></td>
-                
             </tr>
         );
     });
@@ -46,10 +44,8 @@ class Tabela extends Component {
             <table className="centered highlight">
                 <TableHead />
                 <TableBody pessoas={pessoas} removePessoa={removePessoa}/>
-
             </table>
         );
     }
-
 }
 export default Tabela;
