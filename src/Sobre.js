@@ -3,8 +3,6 @@ import Header from './Header';
 import './Sobre.css'
 
 
-
-
 const Sobre = () => {
 
     return (
@@ -20,22 +18,23 @@ const Sobre = () => {
                     <p className="texto3">Oferecemos profissionais experientes e antenados às mudanças no mundo
                     da moda. O atendimento possui padrão de excelência e agilidade,
                   garantindo qualidade e satisfação dos nossos clientes.</p>
-                <div class="ilustracao"></div>
+                    <div class="ilustracao"></div>
                 </div>
-                
-                <div class="beneficios">
-                    <h3 class="pp"> Beneficios</h3>
 
+                <div className="beneficios">
+                    <h3 className="pp"> Beneficios</h3>
                     <ul className="itens">
-                        <li><i class="tiny material-icons">face</i>Atendimento ao cliente</li>
-                        
-                        <li ><i class="tiny material-icons">loyalty</i>Espaço diferenciado</li>
-
-                        
-                        <li><i class="tiny material-icons">group</i>Profissionais qualificados</li>
-                        
-                        <li><i class="tiny material-icons">restaurant_menu</i>Produtos deliciosos e de qualidade!</li>
+                        <li><i class="tiny material-icons">loyalty</i> Espaço diferenciado</li>
+                        <li><i class="tiny material-icons">face</i> Atendimento ao cliente</li>
+                        <li><i class="tiny material-icons">group</i> Profissionais qualificados</li>
+                        <li><i class="tiny material-icons">restaurant_menu</i> Produtos deliciosos e de qualidade!</li>
                     </ul>
+                </div>
+                <div className="rodape">
+                    <i class="icone medium material-icons">local_cafe</i>
+
+                    <h4 className="nome-rodape">Doceria Pão Doce</h4>
+                    <p className="descricao">Deixando a vida mais doce</p>
                 </div>
             </section>
         </Fragment>

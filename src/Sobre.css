@@ -1,14 +1,13 @@
 .sobre{
     margin:0%;
-    padding-bottom: 5rem;
-    background-color: rgb(240, 248, 241);
+
+    background-color: rgb(217, 230, 204);
 }
 .conteudo-sobre{
     display:grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 30% 30% 40%;  
     align-items:center;
-    
 }
 
 .texto{
@@ -20,7 +19,7 @@
     margin: 0;
     background-position: center;
     padding: 4.1rem 2rem 4.1rem 2rem;
-    background-color: rgb(166, 194, 167);
+    background-color: rgb(140, 173, 139);
 }
 .texto2{
     margin:0;
@@ -30,7 +29,7 @@
     text-align: center;
     padding: 4.1rem 2rem 4.1rem 2rem;
     
-    background-color: rgb(149, 181, 182);
+    background-color: rgb(156, 171, 192);
 }
 .texto3{
     margin: 0;
@@ -40,8 +39,20 @@
     margin: 0mm;
     text-align:center;
     padding: 4rem 2rem 4rem 2rem;
-    background-color: rgb(106, 122, 114);
+    background-color: rgb(223, 154, 181);
     text-align: center;
+}
+.texto:hover{
+    transition: 1s all;
+    background-color: rgb(76, 156, 75);
+}
+.texto2:hover{
+    transition: 1s all;
+    background-color: rgb(96, 159, 200);
+}
+.texto3:hover{
+    transition:1s all;
+    background-color: rgb(216, 95, 145);
 }
 .ilustracao{
     background-image: url('./img/bolo.jpg');
@@ -54,13 +65,40 @@
     grid-row: 1 / 4;
 }
 .beneficios {
-    padding-top: 10rem;
+    padding-top: 4rem;
     text-align: center;
 
 }
 .pp{
     font-size: 4rem;
 }
-.itens{
+.itens li{
     font-size: 20px;
+    text-align:center;
+    padding-bottom: 1rem;
+}
+.rodape{
+    background-color:rgb(148, 204, 84);
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+.descricao{
+    font-size: 15px;
+    color:darkgreen;
+    text-align: end;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.nome-rodape{
+
+    font-size: 30px;
+    color:darkgreen;
+    display: flex;
+    margin: auto;
+
+}
+.icone{
+
+    color:darkgreen
 }
