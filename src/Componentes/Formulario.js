@@ -9,26 +9,26 @@ class Formulario extends Component {
 
         this.validador = new FormularioValidador([{
             campo: 'nome',
-            metodo: 'isEmpty', //metodo do validator
+            metodo: 'isEmpty', //METODO VALIDADOR
             validoQuando: false,
             mensagem: 'entre com nome'
         },
         {
             campo: 'sobrenome',
-            metodo: 'isEmpty', //metodo do validator
+            metodo: 'isEmpty', //METODO VALIDADOR
             validoQuando: false,
             mensagem: 'entre com sobrenome'
         },
         {
             campo: 'idade',
-            metodo: 'isInt', //metodo do validator
+            metodo: 'isInt', //METODO VALIDADOR
             args: [{ min: 0, max: 200 }],
             validoQuando: true,
             mensagem: 'entre com idade'
         }
         ]);
 
-        this.stateInicial = { //estado inicial sem os valores
+        this.stateInicial = { //ESTADO INICIAL SEM OS VALORES
             nome: '',
             sobrenome: '',
             idade: '',
@@ -37,24 +37,24 @@ class Formulario extends Component {
         this.state = this.stateInicial;
     }
 
-    escutadorDeInput = event => {
+    escutadorDeInput = event => { //ESCUTADOR DE ENTRADAS 
         const { name, value } = event.target;
 
-        //a cada digitação o campo é atualizado
+        //A CADA DIGITACAO O CAMPO É ATUALIZADO
         this.setState({
             [name]: value
         });
     }
-    submitFormulario = () => {
+    submitFormulario = () => {  //ENVIO DE INFORMAÇOES PARA A TABELA
 
         const validacao = this.validador.valida(this.state);
 
         if (validacao.isValid) {
-            //manda o state que contem as informaçoes que o usuario digitou
-            //para o app.js
+        //MANDA O STATE QUE CONTEM AS INFORMAÇOES QUE O USUARIO DIGITOU PARA O APP.JS
             this.props.escutadorDeSubmit(this.state);
             this.setState(this.stateInicial);
-        } else { // mensagem de erro se algum campo não foi digitado
+
+        } else { // MENSAGEM DE ERRO SE ALGUM CAMPO NÃO FOI DIGITADO
             const { nome, sobrenome, idade } = validacao;
             const campos = [nome, sobrenome, idade];
 
@@ -63,7 +63,7 @@ class Formulario extends Component {
             });
             camposInvalidos.forEach(campo => {
                 PopUp.exibeMensagem('error', campo.message);
-                //exibe mensagem de erro se algum campo não foi digitado
+                //EXIBE MENSAGEM DE ERRO SE ALGUM CAMPO NÃO FOI DIGITADO
             });
         }
     }
@@ -71,7 +71,7 @@ class Formulario extends Component {
 
         const { nome, sobrenome, idade } = this.state;
 
-        return (
+        return ( //INFORMAÇOES DE IMPUT PASSANDO VALIDAÇAO, ID, TYPE, NOME VALOR, E CHAMA ESCUTADOR
             <form>
                 <div className="row">
                     <div className="input-field col s4">
