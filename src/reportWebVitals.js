@@ -11,3 +11,5 @@ const reportWebVitals = onPerfEntry => {
 };
 
 export default reportWebVitals;
+
+                  // NÃO ALTERADO, FOI CRIADO COM O CREAT REACT APP

@@ -3,7 +3,7 @@ import Header from '../../Componentes/Header';
 import './Sobre.css';
 import Rodape from '../../Componentes/Rodape';
 
-const Sobre = () => {
+const Sobre = () => { //PAGINA DE SOBRE
 
     return (
         <Fragment>

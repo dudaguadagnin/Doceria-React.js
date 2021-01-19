@@ -9,10 +9,10 @@ import NotFound from './Paginas/NotFound/NotFound';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-ReactDOM.render(
+ReactDOM.render(        //ROTAS PARA REDIRECIONAMENTO DE PAGINAS
     <BrowserRouter>
         <Switch>
-            <Route path='/' exact={true} component={App} />
+            <Route path='/' exact={true} component={App} /> 
             <Route path='/sobre' component={Sobre} />
             <Route path='/produtos' component={Produtos} />
             <Route component={NotFound} />

@@ -1,16 +1,20 @@
-import validador from 'validator';
+import validador from 'validator'; 
+
+    //FAZ A VALIDAÇÃO DOS CAMPOS PARA ENVIAR APENAS QUANDO TUDO ENTIVER PREENCHIDO
 
 class FormValidator {
+
     constructor(validacoes) {
         this.validacoes = validacoes;
     }
-    valida(state) {
+
+    valida(state) { //PARA VALIDAR 
         let validacao = this.valido();
 
         this.validacoes.forEach(regra => {
 
-            //validator trabalha com strings
-            const campoValor = state[regra.campo.toString()]; //pegando o valor do campo em fromulario e passando para string
+            //VALIDADOR TRABAHA COM STRINGS
+            const campoValor = state[regra.campo.toString()]; //PEGA O VALOR DO CAMPO EM FORMULARIO E PASSA COMO STRING
             const args = regra.args || [];
 
             const metodoValidacao = typeof regra.metodo === 'string' ?
@@ -26,7 +30,7 @@ class FormValidator {
         });
         return validacao;
     }
-    valido() {
+    valido() { // SE ESTA VALIDO
         const validacao = {}
 
         this.validacoes.map(regra => (

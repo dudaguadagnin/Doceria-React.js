@@ -4,7 +4,7 @@ import Header from '../../Componentes/Header';
 import './Produtos.css';
 import Rodape from '../../Componentes/Rodape';
 
-const Produtos = () => {
+const Produtos = () => { // PAGINA DE PRODUTOS DA PADARIA
 
 	return (
 		<Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Header from '../../Componentes/Header';
 
-const NotFound = () => {
+const NotFound = () => { //CASO A PAGINA NÃO TENHA SIDO ENCONTRATA
 
     return (
         <Fragment>

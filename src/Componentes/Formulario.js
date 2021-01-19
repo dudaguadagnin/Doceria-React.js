@@ -28,7 +28,7 @@ class Formulario extends Component {
         }
         ]);
 
-        this.stateInicial = {
+        this.stateInicial = { //estado inicial sem os valores
             nome: '',
             sobrenome: '',
             idade: '',
@@ -54,7 +54,7 @@ class Formulario extends Component {
             //para o app.js
             this.props.escutadorDeSubmit(this.state);
             this.setState(this.stateInicial);
-        } else {
+        } else { // mensagem de erro se algum campo não foi digitado
             const { nome, sobrenome, idade } = validacao;
             const campos = [nome, sobrenome, idade];
 
@@ -63,6 +63,7 @@ class Formulario extends Component {
             });
             camposInvalidos.forEach(campo => {
                 PopUp.exibeMensagem('error', campo.message);
+                //exibe mensagem de erro se algum campo não foi digitado
             });
         }
     }

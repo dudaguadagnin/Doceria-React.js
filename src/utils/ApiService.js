@@ -1,4 +1,6 @@
+
 const ApiService = {
+    
     ListaPessoas: () => {
         return fetch('http://localhost:8000/api/pessoa');
     },
@@ -16,7 +18,7 @@ const ApiService = {
     RemovePessoa: id => {
         return fetch(`http://localhost:8000/api/pessoa/${id}`, { method: 'DELETE', Headers: { 'content-type': 'application/json' } });
     },
-    TrataErros: res => {
+    TrataErros: res => {  //CONFERRE ERROS
         if (!res.ok) {
             throw Error(res.responseText);
         }
